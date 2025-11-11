@@ -34,6 +34,6 @@ class GithubController {
     @GetMapping("/releases")
     List<GithubRelease> fetchReleases(@PathVariable String username,
                                       @PathVariable String repository) {
-        githubApiClient.fetchReleases(us)
+        githubApiClient.fetchReleases(username, repository)
     }
 }
