@@ -15,9 +15,7 @@
  */
 package com.example.demo
 
-
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -32,8 +30,7 @@ class GithubController {
     }
 
     @GetMapping("/releases")
-    List<GithubRelease> fetchReleases(@PathVariable String username,
-                                      @PathVariable String repository) {
-        githubApiClient.fetchReleases(username, repository)
+    List<GithubRelease> fetchReleases() {
+        githubApiClient.fetchReleases("apache", "grails-core")
     }
 }

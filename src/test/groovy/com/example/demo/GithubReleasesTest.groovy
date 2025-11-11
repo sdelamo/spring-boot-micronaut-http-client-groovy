@@ -15,7 +15,7 @@ class GithubReleasesTest {
     TestRestTemplate restTemplate
 
     @Test
-    void shouldReturnASaasSubscriptionWhenDataIsSaved() {
+    void githubRelease() {
         ResponseEntity<List> response = restTemplate.getForEntity("/github/releases", List.class)
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK)
         List l = response.getBody()
