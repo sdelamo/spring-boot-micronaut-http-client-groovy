@@ -26,7 +26,7 @@ dependencies {
     implementation(platform("io.micronaut.platform:micronaut-platform:4.10.1"))
     compileOnly("io.micronaut:micronaut-inject-groovy")
     implementation("io.micronaut.spring:micronaut-spring-boot-starter")
-    implementation("io.micronaut:micronaut-http-client-jdk")
+    implementation("io.micronaut:micronaut-http-client")
     compileOnly("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
 
