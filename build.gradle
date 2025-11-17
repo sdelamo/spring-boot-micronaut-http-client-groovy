@@ -22,8 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.apache.groovy:groovy'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    implementation(platform("io.micronaut.platform:micronaut-platform:4.10.1"))
+    implementation(platform("io.micronaut.platform:micronaut-platform:4.10.2"))
     compileOnly("io.micronaut:micronaut-inject-groovy")
     implementation("io.micronaut.spring:micronaut-spring-boot-starter")
     implementation("io.micronaut:micronaut-http-client")
@@ -35,4 +34,12 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == "io.netty") {
+            details.useVersion "4.2.7.Final"
+            details.because "Force all Netty modules to the Micronaut's version of Netty"
+        }
+    }
 }
